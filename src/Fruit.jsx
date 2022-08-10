@@ -8,12 +8,13 @@ function Fruit(){
     function handleColor(i){
         console.log('change color', i)
         const newArray = fruitsState.map((el,index) => {
-                if (i===index){
-                    el.color = 'blue'
-                }     
-            return el
-            // return i===index ? {...el, color: 'blue'} : el
-         })
+                 if (i===index){
+                     el.color = 'blue'
+                 }     
+             return el
+             })
+        // kurz:
+        // const newArray = fruitsState.map((el,index) => i===index ? {...el, color: 'blue'} : el)
         setFruitsState(newArray)
     }
 
@@ -22,10 +23,12 @@ function Fruit(){
     function handleDelete(i){
         console.log('delete', i)
         const newArray = fruitsState.filter((el,index) => {
-            if(i!==index){
-                return el
-            }
+             if(i!==index){
+                 return el
+             }
         })
+        // kurz
+        // const newArray = fruitsState.filter(( el,index) => i!==index && el)
         console.log(newArray)
         setFruitsState(newArray)
     }
